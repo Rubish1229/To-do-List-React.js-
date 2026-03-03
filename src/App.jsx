@@ -1,20 +1,26 @@
 import AppName from "./Components/AppName";
 import AddToDo from "./Components/AddToDo";
-import ToDoItem1 from "./Components/ToDOItem1";
-import ToDoItem2 from "./Components/ToDoItem2";
+import ToDoItems from "./Components/ToDoItems";
 import "./App.css";
+import WelcomeMsg from "./Components/WelcomeMsg";
+
+import TodoItemsContextProvider, {
+  TodoItemsContext,
+} from "./Store/ToDoItemsstore";
 
 function App() {
   return (
-    <center className="todo-container">
-      <AppName></AppName>
-        <AddToDo></AddToDo>
-        <div className="items-container">
-        <ToDoItem1></ToDoItem1>
-        <ToDoItem2></ToDoItem2>
-        </div>
+    <TodoItemsContextProvider>
+      <center classNameName="todo-container">
+        <AppName></AppName>
 
-    </center>
+        <AddToDo></AddToDo>
+
+        <WelcomeMsg></WelcomeMsg>
+
+        <ToDoItems></ToDoItems>
+      </center>
+    </TodoItemsContextProvider>
   );
 }
 
